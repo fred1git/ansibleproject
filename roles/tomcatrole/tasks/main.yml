@@ -1,0 +1,15 @@
+---
+# tasks file for tomcatrole
+  - name: installation of tomcat
+    become: yes
+    get_url:
+      url: https://www-eu.apache.org/dist/tomcat/tomcat-8/v8.5.41/bin/apache-tomcat-8.5.41.tar.gz
+      dest: /opt/
+  - name: Unarchive tomcat from download
+    unarchive:
+      src: /opt/apache-tomcat-8.5.41.tar.gz
+      dest: /opt/
+      remote_src: yes
+  - name: move tomcat directory to tomcat
+    command: mv /opt/apache-tomcat-8.5.41 /opt/tomcat
+

@@ -1,0 +1,7 @@
+---
+# tasks file for userrole
+  - name: add group tomcat
+    group: name=tomcat
+  - name: create user tomcat
+    user: name=tomcat group=tomcat
+
