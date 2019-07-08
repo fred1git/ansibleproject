@@ -1,0 +1,10 @@
+---
+- hosts: servers
+  become: yes
+  roles:
+    - userrole
+    - java
+    - tomcatrole
+  tasks:
+  - name: Starting tomcat
+    command: nohup /opt/tomcat/bin/startup.sh
